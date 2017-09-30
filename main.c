@@ -6,7 +6,7 @@ int size(LL p){
     }
     return 1+size(p->_next);
 }
-double ith(LL p, int index){ //Retourner le ième élément de la liste.
+double ith(LL p, int index){ //Retourner le ieme element de la liste.
     if(index==1){               //Condition de base
         return p->_value;
     }
@@ -27,7 +27,7 @@ void print_dec(LL p){
     print_dec(p->_next);
 }
 
-void add_queue(LL* p, double value){  
+void add_queue(LL* p, double value){
     LL newP = (LL)malloc(sizeof *newP);
     if (newP != NULL){
       newP->_next = NULL;
@@ -45,18 +45,18 @@ void add_queue(LL* p, double value){
     }
 }
 void sort_ascending(LL p){
-   double min; 
+   double min;
    LL tmp3=(LL)malloc(sizeof(LL));
    LL tmp1=(LL)malloc(sizeof(LL));
    LL tmp=p;
- 
+
    for(tmp=p ; tmp!=NULL ; tmp=tmp->_next){
      tmp3=tmp;
      min=tmp->_value;
-     
+
      for(tmp1=tmp->_next ; tmp1!=NULL ; tmp1=tmp1->_next){
         if(min < tmp1->_value){
-           tmp3=tmp1; //Tmp3 est l'adresse de l'élement où se trouve le minimum.
+           tmp3=tmp1; //Tmp3 est l'adresse de l'element ou se trouve le minimum.
            min=tmp3->_value;
         }
      }
@@ -71,7 +71,7 @@ double delete_top(LL *p){
     if(!tmp){
         return -1; //Retourne -1 si la pile est vide.
 		exit(EXIT_FAILURE);}
-    *tmp=(*p)->_next; 
+    *tmp=(*p)->_next;
     val=(*p)->_value;
     free(*p);
     *p=*tmp;
@@ -132,7 +132,7 @@ void test(){
 	printf("\n");
 
 	if(delete_list(tab1)==NULL){
-        printf("Linked list has been deleted.\n");  
+        printf("Linked list has been deleted.\n");
     };
 }
 

@@ -6,7 +6,7 @@ int size(LL p){
     }
     return 1+size(p->_next);
 }
-int ith(LL p, int index){ //Retourner le ième élément de la liste.
+int ith(LL p, int index){ //Retourner le ieme element de la liste.
     if(index==1){               //Condition de base
         return p->_value;
     }
@@ -17,7 +17,7 @@ void print_inc(LL p){
 		return;
 	}
 	print_inc(p->_next);
-	printf("%d\t",p->_value); 
+	printf("%d\t",p->_value);
 }
 void print_dec(LL p){
     if(!p){
@@ -25,9 +25,9 @@ void print_dec(LL p){
     }
     printf("%d\t",p->_value);
     print_dec(p->_next);
-} 
+}
 
-void add_queue(LL* p, int value){  
+void add_queue(LL* p, int value){
     LL newP = (LL)malloc(sizeof *newP);
     if (newP != NULL){
       newP->_next = NULL;
@@ -47,7 +47,7 @@ void add_queue(LL* p, int value){
 int maximum(LL p){
 	int max;
 	LL tmp=p;
-	max=tmp->_value; 
+	max=tmp->_value;
 		for(tmp=p; tmp!=NULL; tmp=tmp->_next){
 			if(tmp->_value>max){
 				max=tmp->_value;
@@ -58,7 +58,7 @@ int maximum(LL p){
 int minimum(LL p){
 	int min;
 	LL tmp=p;
-	min=tmp->_value; 
+	min=tmp->_value;
 		for(tmp=p; tmp!=NULL; tmp=tmp->_next){
 			if(tmp->_value<min){
 				min=tmp->_value;
@@ -67,7 +67,7 @@ int minimum(LL p){
 		return min;
 }
 double sort_ascending(LL p){
-   int max; 
+   int max;
    LL tmp3=(LL)malloc(sizeof(LL));
    LL tmp1=(LL)malloc(sizeof(LL));
    LL tmp=p;
@@ -77,13 +77,13 @@ double sort_ascending(LL p){
      max=tmp->_value;
      for(tmp1=tmp->_next ; tmp1!=NULL ; tmp1=tmp1->_next){
         if(max < tmp1->_value){
-           tmp3=tmp1; //Tmp3 est l'adresse de l'élement où se trouve le max.
+           tmp3=tmp1; //Tmp3 est l'adresse de l'element ou se trouve le max.
            max=tmp3->_value;
-        }	
+        }
      }
      tmp3->_value=tmp->_value; //Echange des 2 elements.
      tmp->_value=max;
-	 print_inc(p); //Affiche les étapes du tri.
+	 print_inc(p); //Affiche les etapes du tri.
    }
 }
 
@@ -128,7 +128,7 @@ void test(){
 	printf("\n");
 
 	if(delete_list(tab1)==NULL){
-        printf("Linked list has been deleted.\n");  
+        printf("Linked list has been deleted.\n");
     }
 }
 
